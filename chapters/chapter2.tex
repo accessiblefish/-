@@ -1,0 +1,59 @@
+%% This is file 'chapter2.tex'
+
+\chapter{基于蒙特卡洛的}
+\label{chap:inverseproblem}
+
+\section{引言}
+引言……
+
+……
+
+\section{xxxxxxx影响因素分析}
+
+\subsection{xxx细分}
+
+……概率密度函数为：
+\begin{equation}
+\label{eq:kduiuijm}
+    f_s(t_1)=\left\{
+    \begin{array}{lr}
+    \frac{1}{\sigma_s\sqrt{2\pi}}e^{-\frac{(t_1-\mu_s)^2}{2\sigma_s^2}}, & \mu_S-12<t_1\leq 24\\
+    \frac{1}{\sigma_s\sqrt{2\pi}}e^{-\frac{(t_1+24-\mu_s)^2}{2\sigma_s^2}}, & 0<t_1\leq \mu_s-12
+    \end{array}
+    \right.
+\end{equation}
+\noindent 式中：$t_1$为开始充电时间；$\mu_S$为函数$f_s(t_1)$中$t_1$的期望；$\sigma_S$为$f_s(t_1)$中$t_1$的标准差。
+
+……如表\ref{tab:parameter}和表\ref{tab:gdlv}所示：
+
+\begin{table}[H]\small
+    \centering
+    \caption{不同类型电动汽车日行驶里程对数正态分布参数}
+    \label{tab:parameter}
+    \begin{tabularx}{\textwidth}{@{} >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X @{}}
+    \toprule
+	参数 & 私家车 & 公交车 & 出租车\\\midrule
+    $\mu_D$ & 3.2 & 3.0 & 5.1\\
+    $\sigma_D$ & 0.88 & 0.8 & 0.3\\
+    \bottomrule
+    \end{tabularx}%
+\end{table}
+
+\begin{table}[H]\small
+    \centering
+    \caption{不同电动汽车开始充电时间和概率}
+    \label{tab:gdlv}
+    \begin{tabularx}{\textwidth}{@{} >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X \>{\centering\arraybackslash}X @{}}
+    \toprule
+	{电动汽车类型 & 功能区 & 充电时段 & 充电概率 & 充电开始时间分布}\\\midrule
+    \multirow{2}{*}{出租车} & \multirow{2}{*}{商业区} & 02:00$\sim$04:00 & 100\% & \multirow{2}{*}{均匀分布}\\
+    \cline{3-4}
+    & & 11:30$\sim$4:00 & 100\% &\\\midrule
+    公交车 & 工作区 & 18:00$\sim$08:00 & 100\% & 均匀分布\\\midrule \multirow{2}{*}{私家车} & 工作区 & 08:00$\sim$17:00 & 20\% & $N(8.9,1.5^2)$\\\cline{2-5}
+    & 居民区 & 17:00$\sim$07:00 & 80\% & $N(17.6,3.4^2)$\\
+    \bottomrule
+    \end{tabularx}
+\end{table}
+
+
+\section{本章小结}

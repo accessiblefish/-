@@ -1,0 +1,100 @@
+\documentclass{hhu-thesis-bachelor}
+%% 更改数学字体设置，Latin Modern Math 默认的有点细，可选用下列宏包
+% \usepackage[bold-style=ISO]{unicode-math}
+\usepackage{lipsum}
+
+%% 本科论文规定不允许有空页，因此将空页替换掉
+\let\cleardoublepage\clearpage
+
+\begin{document}
+
+%%
+%% 基本信息设定（一定要改这里）
+%%
+
+% 此处填写你的学号
+\studentnumber{2xxxxxxxxxxx}
+% 此处填写你的中文论文标题
+\title{论文名}
+% 此处填写你的中文姓名
+\author{xxx}
+% 此处填写你的年级，如：2021级
+\grade{2021级}
+% 此处填写指导教师的中文名
+\tutor{xxx}
+% 此处填写专业的中文名
+\major{xxxxxxx}
+% 此处填写评阅人（答辩完成后填写，答辩时空着）
+\reviewer{}
+% 此处填写日期，如：2025年5月
+\thesisdate{2025年5月}
+% 此处填写中文地点，如：中~~国~~$\cdot$~~南~~京，将城市名改成所在的城市即可
+\location{中国\enspace 南京}
+
+% 此处填写英文论文标题
+\englishtitle{xxxxxxxxxx}
+% 此处填写英文学院名
+\englishcollege{xxxxxxxxxxx}
+% 此处填写英文专业名
+\englishmajor{xxxxxxxxxx}
+% 此处填写你的英文姓名
+\englishauthor{xxxxxxx}
+% 此处填写指导教师的英文名，教授使用 Professor，副教授使用 Associate Professor
+\englishtutor{xxxx Associate Professor}
+% 此处填写英文地点
+\englishlocate{NANJING CHINA}
+
+%% 填写完上述信息后，即可在chapters文件夹中创建tex文件开始写作，
+%% 引用的参考文献以bib文件形式放在reference文件夹中，
+%% 写作完成后，在下面的正文部分引入所有的tex文件，
+%% 并在下面的参考文献部分引入所有bib文件，编译即可生成论文。
+
+%%
+%% 生成封面和声明页
+%%
+
+%% 生成中文封面
+\makecover
+%% 生成英文封面
+\makeencover
+%% 生成声明页
+\makedeclare
+
+%%
+%% 前置部分
+%%
+
+\frontmatter
+\pagestyle{hhuformatestyle}
+%% 摘要
+\input{chapters/abstract}
+%% 符号对照表，可选，如不用可注释掉
+% \input{chapters/denotation}
+%% 加入目录
+\tableofcontents
+
+%%
+%% 正文部分（在这里引入你的所有tex文件和bib文件）
+%%
+
+\mainmatter
+
+%% 各章正文内容
+%% 在这里引入各章节，一般本科毕设五章，一章绪论+三章研究内容+一章总结展望
+\input{chapters/chapter1}
+\input{chapters/chapter2}
+\input{chapters/chapter3}
+\input{chapters/chapter4}
+\input{chapters/summary}
+%% (其后部分无编号)
+\backmatter
+%% 引入致谢
+\input{chapters/acknowledgement}
+%% 参考文献样式设定
+\bibliographystyle{hhuthesis-numeric}% 顺序编码式
+
+%% 参考文献，10号字，使用 BibTeX，包含参考文献文件.bib
+%% 如果新创建了bib文件，记得要在这里引用哦！！！
+\bibliography{reference/chap1}
+
+\end{document}
